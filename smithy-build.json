@@ -5,6 +5,11 @@
     "typescript-client-codegen": {
       "package": "@smithy/typescript-example-client",
       "packageVersion": "0.0.1"
+    },
+    "typescript-server-codegen": {
+      "package": "@smithy/typescript-example-server",
+      "packageVersion": "0.0.1",
+      "disableDefaultValidation": true
     }
   }
 }
