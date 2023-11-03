@@ -11,11 +11,12 @@ public class ExampleClientProtocolGeneratorIntegration implements TypeScriptInte
     // ProtocolGenerator implementation is inline for brevity, but should be in its
     // own file
     private static class ExampleClientProtocolGenerator implements ProtocolGenerator {
-        // Implement ProtocolGenerator methods
+        // Protocol generator for a @example.client#protocol protocol trait
         @Override
         public ShapeId getProtocol() {
             return ShapeId.from("example.client#protocol");
         }
+        // Implement ProtocolGenerator methods ...
 
         @Override
         public ApplicationProtocol getApplicationProtocol() {
