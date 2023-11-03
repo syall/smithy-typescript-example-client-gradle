@@ -1,5 +1,6 @@
 package typescript.example.client.gradle;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -35,8 +36,12 @@ public class ExampleClientEndpointResolutionIntegration implements TypeScriptInt
         // Runtime config value also be specified per platform by using the `target`
         // argument, e.g.
         // if (target.equals(LanguageTarget.NODE)) { ... }
-
-        // This example provides an arbitrary endpoint
-        return Map.of("endpoint", w -> w.write("$S", "https://www.example.com"));
+        if (target.equals(LanguageTarget.SHARED)) {
+            // This example provides an arbitrary endpoint on the shared runtime config
+            return Map.of("endpoint", w -> w.write("$S", "https://www.example.com"));
+        }
+        // No need to redefine endpoint for other targets since it's inherited from the
+        // shared target
+        return Collections.emptyMap();
     }
 }
