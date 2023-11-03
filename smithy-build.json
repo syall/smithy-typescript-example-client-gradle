@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "sources": ["models"],
+  "plugins": {
+    "typescript-client-codegen": {
+      "package": "@smithy/typescript-example-client",
+      "packageVersion": "0.0.1"
+    }
+  }
+}
